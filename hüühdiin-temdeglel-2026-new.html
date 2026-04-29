@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Миний Өдрийн Тэмдэглэл 2026 🌈</title>
+<meta name="description" content="Хүүхдэд зориулсан виртуал өдрийн тэмдэглэл — 2026 он">
+<meta property="og:title" content="Миний Өдрийн Тэмдэглэл 2026 🌈">
+<meta property="og:description" content="Хүүхдэд зориулсан виртуал өдрийн тэмдэглэл — өдөр бүрийн мэдрэмж, зорилго, урам зоригийг тэмдэглэ!">
+<meta property="og:type" content="website">
+<meta name="author" content="Ээжийн Тэмдэглэл">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --yellow:  #FFD93D; --yellow2: #FFF3B0; --yellow3: #FFFBE6;
+  --green:   #5DD97A; --green2:  #BDFACC; --green3:  #EAFFF0;
+  --blue:    #4D9FFF; --blue2:   #B3D8FF; --blue3:   #E6F3FF;
+  --pink:    #FF6EB4; --pink2:   #FFD0EA; --pink3:   #FFF0F8;
+  --purple:  #B26EFF; --purple2: #E4C8FF; --purple3: #F7EEFF;
+  --orange:  #FF8C42; --orange2: #FFD4B3; --orange3: #FFF4EE;
+  --dark:#2D2D2D; --mid:#555; --light:#888;
+  --bg:#FAFAFA; --white:#FFFFFF; --border:rgba(0,0,0,0.08);
+  --radius:20px; --radiusSm:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#FF6EB4 0%,#B26EFF 30%,#4D9FFF 60%,#5DD97A 85%,#FFD93D 100%);position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 120px 80px at 10% 20%,rgba(255,255,255,0.18) 0%,transparent 70%),radial-gradient(ellipse 90px 60px at 85% 70%,rgba(255,255,255,0.15) 0%,transparent 70%),radial-gradient(ellipse 70px 50px at 55% 10%,rgba(255,255,255,0.12) 0%,transparent 70%);pointer-events:none;}
+.header-inner{max-width:980px;margin:0 auto;padding:2.2rem 2.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2;}
+.brand-pill{background:rgba(255,255,255,0.28);border-radius:50px;padding:0.3rem 1.1rem;display:inline-block;font-size:12px;font-weight:800;color:white;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.7rem;}
+.brand-title{font-family:'Fredoka One',cursive;font-size:3rem;color:white;text-shadow:3px 4px 0 rgba(0,0,0,0.12);line-height:1.1;}
+.brand-sub{font-size:14px;color:rgba(255,255,255,0.9);font-weight:700;letter-spacing:4px;margin-top:6px;text-transform:uppercase;}
+.header-deco{position:absolute;right:0;top:0;bottom:0;width:360px;opacity:0.22;pointer-events:none;}
+.today-bubble{background:rgba(255,255,255,0.3);border-radius:22px;padding:1rem 1.5rem;text-align:center;border:2px solid rgba(255,255,255,0.4);}
+.today-bubble .wd{font-size:11px;font-weight:800;color:rgba(255,255,255,0.85);letter-spacing:2px;text-transform:uppercase;}
+.today-bubble .dn{font-family:'Fredoka One',cursive;font-size:3.4rem;color:white;line-height:1;text-shadow:2px 3px 0 rgba(0,0,0,0.12);}
+.today-bubble .my{font-size:13px;font-weight:700;color:rgba(255,255,255,0.9);}
+
+/* TABS */
+.nav-tabs{background:white;border-bottom:2px solid var(--border);display:flex;justify-content:center;position:sticky;top:0;z-index:100;padding:0.6rem 1rem;gap:8px;box-shadow:0 3px 20px rgba(0,0,0,0.07);}
+.nav-tab{padding:0.55rem 1.3rem;border-radius:50px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:800;cursor:pointer;transition:all 0.22s ease;user-select:none;border:2.5px solid transparent;color:var(--mid);background:var(--bg);white-space:nowrap;}
+.nav-tab[data-tab="home"]{--tc:var(--pink);--tl:var(--pink3);}
+.nav-tab[data-tab="calendar"]{--tc:var(--blue);--tl:var(--blue3);}
+.nav-tab[data-tab="journal"]{--tc:var(--orange);--tl:var(--orange3);}
+.nav-tab[data-tab="feelings"]{--tc:var(--purple);--tl:var(--purple3);}
+.nav-tab[data-tab="motivation"]{--tc:var(--green);--tl:var(--green3);}
+.nav-tab:hover{background:var(--tl);color:var(--dark);}
+.nav-tab.active{background:var(--tc);border-color:var(--tc);color:white;transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.15);}
+
+/* MAIN */
+.main{max-width:980px;margin:0 auto;padding:2.2rem 2.5rem;}
+.section{display:none;}
+.section.active{display:block;animation:popIn 0.3s ease;}
+@keyframes popIn{from{opacity:0;transform:scale(0.97) translateY(8px);}to{opacity:1;transform:scale(1) translateY(0);}}
+
+/* CARDS */
+.card{background:white;border-radius:var(--radius);padding:1.75rem;margin-bottom:1.2rem;border:2.5px solid transparent;box-shadow:0 2px 16px rgba(0,0,0,0.05);}
+.card-yellow{border-color:var(--yellow);background:var(--yellow3);}
+.card-green{border-color:var(--green);background:var(--green3);}
+.card-blue{border-color:var(--blue);background:var(--blue3);}
+.card-pink{border-color:var(--pink);background:var(--pink3);}
+.card-purple{border-color:var(--purple);background:var(--purple3);}
+.card-orange{border-color:var(--orange);background:var(--orange3);}
+
+/* SECTION HEADER */
+.sec-badge{display:inline-flex;align-items:center;gap:6px;font-family:'Fredoka One',cursive;font-size:13px;letter-spacing:1px;padding:4px 14px;border-radius:30px;margin-bottom:0.6rem;text-transform:uppercase;}
+.sec-title{font-family:'Fredoka One',cursive;font-size:2.2rem;color:var(--dark);margin-bottom:0.4rem;line-height:1.2;}
+.sec-sub{font-size:14.5px;color:var(--mid);line-height:1.65;margin-bottom:2rem;font-weight:700;}
+
+/* LABELS */
+.field-label{font-family:'Fredoka One',cursive;font-size:17px;color:var(--dark);display:block;margin-bottom:10px;}
+
+/* INPUTS */
+.kid-input,.kid-textarea{width:100%;padding:0.8rem 1.1rem;border:2.5px solid rgba(0,0,0,0.09);border-radius:14px;font-family:'Nunito',sans-serif;font-size:15px;color:var(--dark);background:white;outline:none;transition:border-color 0.2s,transform 0.15s;}
+.kid-input:focus,.kid-textarea:focus{border-color:var(--blue);transform:scale(1.01);}
+.kid-textarea{resize:vertical;min-height:110px;line-height:1.85;font-family:'Nunito',sans-serif;}
+.ruled{background-image:repeating-linear-gradient(transparent,transparent 28px,rgba(0,0,0,0.05) 28px,rgba(0,0,0,0.05) 29px);background-attachment:local;}
+
+/* MOOD */
+.mood-grid{display:flex;gap:10px;flex-wrap:wrap;}
+.mood-btn{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 16px;border:3px solid rgba(0,0,0,0.08);border-radius:16px;cursor:pointer;background:white;transition:all 0.18s;font-size:12px;font-weight:800;color:var(--mid);min-width:76px;}
+.mood-btn:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+.mood-btn.sel{transform:translateY(-4px) scale(1.06);border-color:var(--pink);background:var(--pink3);color:var(--dark);box-shadow:0 6px 18px rgba(255,110,180,0.25);}
+.mood-emoji{font-size:28px;}
+
+/* EMOTIONS */
+.emo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.emo-btn{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px;border:3px solid rgba(0,0,0,0.07);border-radius:18px;cursor:pointer;background:white;transition:all 0.18s;font-size:12.5px;font-weight:800;color:var(--mid);text-align:center;}
+.emo-btn:hover{transform:translateY(-4px) rotate(-2deg);box-shadow:0 8px 22px rgba(0,0,0,0.12);}
+.emo-btn.sel{border-color:var(--purple);background:var(--purple3);color:var(--dark);transform:translateY(-4px) rotate(-2deg);box-shadow:0 8px 22px rgba(178,110,255,0.3);}
+.emo-icon{font-size:30px;}
+
+/* GOALS */
+.goals-list{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.goal-row{display:flex;align-items:center;gap:10px;}
+.goal-check{width:28px;height:28px;border:3px solid var(--blue);border-radius:50%;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-size:14px;font-weight:800;color:white;background:white;}
+.goal-check.done{background:var(--green);border-color:var(--green);}
+.goal-input{flex:1;border:none;border-bottom:2.5px dashed rgba(0,0,0,0.12);background:transparent;font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;color:var(--dark);padding:4px 0;outline:none;}
+.goal-input.done-line{text-decoration:line-through;color:var(--light);}
+
+/* STARS */
+.star-row{display:flex;gap:8px;justify-content:center;}
+.star{font-size:38px;cursor:pointer;color:#E8E8E8;transition:all 0.15s;user-select:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.1));}
+.star.lit{color:var(--yellow);filter:drop-shadow(0 2px 6px rgba(255,217,61,0.5));}
+.star:hover{transform:scale(1.25) rotate(10deg);}
+
+/* CALENDAR */
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.cal-btn{width:42px;height:42px;border:3px solid var(--blue2);border-radius:50%;background:var(--blue3);cursor:pointer;font-size:18px;color:var(--blue);display:flex;align-items:center;justify-content:center;transition:all 0.18s;font-weight:800;}
+.cal-btn:hover{background:var(--blue);color:white;border-color:var(--blue);transform:scale(1.1);}
+.cal-month-name{font-family:'Fredoka One',cursive;font-size:1.7rem;color:var(--dark);text-align:center;}
+.cal-year-txt{font-size:14px;color:var(--mid);text-align:center;font-weight:700;}
+.cal-hdrs{display:grid;grid-template-columns:repeat(7,1fr);margin-bottom:6px;gap:3px;}
+.cal-hdr{text-align:center;font-size:11px;font-weight:800;color:var(--mid);padding:6px 0;border-radius:8px;}
+.cal-hdr.wknd{color:var(--pink);background:var(--pink3);}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:12px;cursor:pointer;font-size:14px;font-weight:800;color:var(--dark);transition:all 0.15s;position:relative;border:2px solid transparent;}
+.cal-day:hover{background:var(--yellow2);border-color:var(--yellow);transform:scale(1.08);}
+.cal-day.today{background:linear-gradient(135deg,var(--pink),var(--purple));color:white;border-radius:14px;box-shadow:0 4px 14px rgba(178,110,255,0.35);}
+.cal-day.wknd-day{color:var(--pink);}
+.cal-day.empty{cursor:default;pointer-events:none;}
+.cal-day.has-entry::after{content:'★';font-size:10px;color:var(--yellow);position:absolute;bottom:2px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.2));}
+.cal-day.today.has-entry::after{color:rgba(255,255,255,0.9);}
+
+/* QUOTE */
+.quote-hero{background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--orange) 100%);border-radius:24px;padding:2.8rem 3rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.5rem;}
+.q-stars-bg{position:absolute;inset:0;background:radial-gradient(circle 3px at 15% 25%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(circle 2px at 75% 15%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(circle 4px at 85% 70%,rgba(255,255,255,0.35) 0%,transparent 100%),radial-gradient(circle 2px at 35% 80%,rgba(255,255,255,0.4) 0%,transparent 100%),radial-gradient(circle 3px at 60% 40%,rgba(255,255,255,0.3) 0%,transparent 100%);pointer-events:none;}
+.quote-txt{font-family:'Fredoka One',cursive;font-size:1.55rem;color:white;text-shadow:2px 3px 0 rgba(0,0,0,0.12);line-height:1.55;margin-bottom:1.2rem;position:relative;z-index:1;}
+.quote-star{font-size:2rem;position:relative;z-index:1;}
+
+/* AFFIRMATIONS */
+.affirm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+.affirm-card{border-radius:16px;padding:1.25rem;font-family:'Fredoka One',cursive;font-size:15px;line-height:1.55;text-align:center;border:3px solid transparent;}
+
+/* HOME */
+.home-hero{background:linear-gradient(135deg,#FFF0FA 0%,#EEF4FF 35%,#F0FFF4 70%,#FFFDE6 100%);border-radius:26px;border:3px solid var(--pink2);padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;margin-bottom:1.5rem;}
+.home-badge{display:inline-block;background:linear-gradient(90deg,var(--yellow),var(--orange));color:white;font-family:'Fredoka One',cursive;font-size:13px;letter-spacing:1.5px;padding:5px 20px;border-radius:30px;margin-bottom:1.2rem;text-transform:uppercase;box-shadow:0 3px 12px rgba(255,138,66,0.35);}
+.home-title{font-family:'Fredoka One',cursive;font-size:3rem;color:var(--dark);line-height:1.15;margin-bottom:1rem;}
+.home-title span.y{color:var(--yellow);} .home-title span.g{color:var(--green);}
+.home-title span.b{color:var(--blue);}  .home-title span.p{color:var(--pink);}
+.home-title span.v{color:var(--purple);}
+.home-sub{font-size:15.5px;color:var(--mid);max-width:420px;margin:0 auto 2rem;line-height:1.7;font-weight:700;}
+.btn-rainbow{display:inline-block;padding:13px 32px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));color:white;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:16px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 18px rgba(178,110,255,0.4);margin:0 6px;}
+.btn-rainbow:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 7px 24px rgba(178,110,255,0.5);}
+.btn-outline{display:inline-block;padding:12px 28px;background:white;color:var(--mid);border:3px solid var(--border);border-radius:50px;font-family:'Fredoka One',cursive;font-size:15px;cursor:pointer;transition:all 0.2s;margin:0 6px;}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.5rem;}
+.feat-card{border-radius:18px;padding:1.4rem;text-align:center;transition:transform 0.2s,box-shadow 0.2s;border:3px solid transparent;}
+.feat-card:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:0 10px 28px rgba(0,0,0,0.1);}
+.feat-icon{font-size:2.2rem;margin-bottom:0.6rem;display:block;}
+.feat-title{font-family:'Fredoka One',cursive;font-size:15px;color:var(--dark);margin-bottom:5px;}
+.feat-desc{font-size:12.5px;color:var(--mid);line-height:1.6;font-weight:700;}
+
+/* SAVE */
+.save-row{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-top:1.25rem;}
+.save-btn{padding:11px 26px;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:15px;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:7px;}
+.save-btn-green{background:var(--green);color:white;box-shadow:0 4px 14px rgba(93,217,122,0.4);}
+.save-btn-green:hover{background:#3EBF5A;transform:translateY(-2px);}
+.saved-ok{font-size:13px;color:var(--green);font-weight:800;display:none;}
+
+/* PROMPTS */
+.prompt-block{border-radius:18px;padding:1.4rem;margin-bottom:1rem;border:3px solid transparent;}
+.prompt-q{font-family:'Fredoka One',cursive;font-size:17px;color:var(--dark);margin-bottom:10px;}
+.prompt-area{width:100%;border:none;border-radius:12px;padding:12px;font-family:'Nunito',sans-serif;font-size:14.5px;color:var(--dark);outline:none;resize:vertical;min-height:80px;line-height:1.75;font-weight:700;}
+
+/* TIMER */
+.timer-face{font-family:'Fredoka One',cursive;font-size:4.5rem;text-align:center;background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:3px;}
+.timer-presets{display:flex;gap:8px;justify-content:center;margin:0.75rem 0 1rem;}
+.t-preset{padding:7px 20px;border:3px solid var(--border);border-radius:50px;cursor:pointer;font-family:'Fredoka One',cursive;font-size:14px;color:var(--mid);background:white;transition:all 0.18s;}
+.t-preset.sel{background:var(--blue);border-color:var(--blue);color:white;}
+
+/* RAINBOW DIVIDER */
+.rainbow-div{height:5px;border-radius:10px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow),var(--green),var(--blue),var(--purple));margin:1.75rem 0;opacity:0.6;}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .header-inner{flex-direction:column;gap:1rem;text-align:center;}
+  .today-bubble{text-align:center;}
+  .brand-title{font-size:2.2rem;}
+  .header-deco{display:none;}
+  .nav-tabs{overflow-x:auto;justify-content:flex-start;padding:0.5rem;}
+  .nav-tab{font-size:12px;padding:0.5rem 1rem;}
+  .main{padding:1.5rem 1rem;}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .emo-grid{grid-template-columns:repeat(3,1fr);}
+  .affirm-grid{grid-template-columns:1fr;}
+  .home-title{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <svg class="header-deco" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(240,95)">
+      <polygon points="0,-55 13,-18 52,-18 21,7 33,45 0,22 -33,45 -21,7 -52,-18 -13,-18" fill="white"/>
+    </g>
+    <polygon points="80,30 83,20 86,30 96,30 88,36 91,46 83,40 75,46 78,36 70,30" fill="white"/>
+    <polygon points="300,150 302,144 304,150 310,150 305,154 307,160 302,156 296,160 298,154 293,150" fill="white"/>
+    <polygon points="130,155 132,149 134,155 140,155 135,159 137,165 132,161 126,165 128,159 123,155" fill="white"/>
+    <circle cx="55" cy="100" r="30" fill="white" opacity="0.15"/>
+    <circle cx="55" cy="100" r="18" fill="white" opacity="0.15"/>
+    <circle cx="320" cy="50" r="22" fill="white" opacity="0.12"/>
+    <circle cx="175" cy="170" r="25" fill="white" opacity="0.1"/>
+    <ellipse cx="165" cy="40" rx="30" ry="18" fill="white" opacity="0.18"/>
+    <ellipse cx="180" cy="38" rx="22" ry="15" fill="white" opacity="0.15"/>
+    <ellipse cx="150" cy="38" rx="18" ry="13" fill="white" opacity="0.12"/>
+    <path d="M 10 180 Q 90 80 180 160" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.12"/>
+    <path d="M 10 190 Q 90 95 180 172" stroke="white" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.1"/>
+    <circle cx="100" cy="165" r="5" fill="white" opacity="0.3"/>
+    <circle cx="115" cy="155" r="3.5" fill="white" opacity="0.25"/>
+    <circle cx="285" cy="30" r="4" fill="white" opacity="0.3"/>
+    <circle cx="298" cy="18" r="3" fill="white" opacity="0.22"/>
+  </svg>
+
+  <div class="header-inner">
+    <div>
+      <div class="brand-pill">⭐ хүүхдэд зориулсан ⭐</div>
+      <h1 class="brand-title">Миний<br>Тэмдэглэл</h1>
+      <p class="brand-sub">2 &nbsp; 0 &nbsp; 2 &nbsp; 6</p>
+      <div id="headerProfile" style="display:none;margin-top:10px;background:rgba(255,255,255,0.25);border-radius:40px;padding:5px 16px 5px 10px;display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,0.35);">
+        <span style="font-size:1.4rem;" id="headerAvatar">🌟</span>
+        <span style="font-family:'Fredoka One',cursive;font-size:15px;color:white;" id="headerName"></span>
+        <span style="font-size:12px;font-weight:800;color:rgba(255,255,255,0.82);" id="headerAge"></span>
+      </div>
+    </div>
+    <div class="today-bubble" id="todayBubble"></div>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="nav-tabs">
+  <div class="nav-tab active" data-tab="home">🏠 Нүүр</div>
+  <div class="nav-tab" data-tab="calendar">📅 Хуанли</div>
+  <div class="nav-tab" data-tab="journal">✏️ Тэмдэглэл</div>
+  <div class="nav-tab" data-tab="feelings">💭 Мэдрэмж</div>
+  <div class="nav-tab" data-tab="motivation">🌟 Урам зориг</div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HOME -->
+  <div class="section active" id="section-home">
+    <!-- PROFILE CARD -->
+    <div class="card" id="profileCard" style="border:3px solid var(--pink2);background:linear-gradient(135deg,var(--pink3),var(--purple3));border-radius:24px;margin-bottom:1.4rem;">
+      <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
+        <div style="font-size:3.5rem;cursor:pointer;" id="avatarDisplay" onclick="cycleAvatar()" title="Дарж дүрс сонго">🌟</div>
+        <div style="flex:1;min-width:200px;">
+          <p style="font-family:'Fredoka One',cursive;font-size:13px;color:var(--purple);letter-spacing:1px;margin-bottom:10px;">👤 ӨӨРИЙН МЭДЭЭЛЭЛ</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+            <input id="kidName" class="kid-input" type="text" placeholder="Нэрээ бич..." style="flex:1;min-width:140px;font-family:'Fredoka One',cursive;font-size:16px;background:white;">
+            <input id="kidAge" class="kid-input" type="number" placeholder="Нас" min="3" max="18" style="width:90px;font-family:'Fredoka One',cursive;font-size:16px;text-align:center;background:white;">
+          </div>
+          <button onclick="saveProfile()" style="padding:9px 22px;background:linear-gradient(90deg,var(--pink),var(--purple));color:white;border:none;border-radius:50px;font-family:'Fredoka One',cursive;font-size:14px;cursor:pointer;box-shadow:0 3px 12px rgba(178,110,255,0.35);">✨ Хадгалах</button>
+          <span id="profileSavedOk" style="display:none;margin-left:10px;font-family:'Fredoka One',cursive;font-size:13px;color:var(--green);">🎉 Хадгалагдлаа!</span>
+        </div>
+        <div id="profileGreeting" style="display:none;text-align:center;min-width:140px;">
+          <div style="font-size:3rem;" id="greetAvatar">🌟</div>
+          <p style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--dark);" id="greetName"></p>
+          <p style="font-size:13px;font-weight:800;color:var(--mid);" id="greetAge"></p>
+          <button onclick="editProfile()" style="margin-top:8px;padding:5px 14px;background:white;border:2px solid var(--purple2);border-radius:20px;font-family:'Fredoka One',cursive;font-size:12px;color:var(--purple);cursor:pointer;">✏️ Засах</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-hero">
+      <svg style="position:absolute;inset:0;opacity:0.06;pointer-events:none;width:100%;height:100%">
+        <defs><pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="3" fill="#B26EFF"/>
+          <circle cx="25" cy="22" r="2" fill="#FF6EB4"/>
+          <circle cx="38" cy="12" r="2.5" fill="#FFD93D"/>
+        </pattern></defs>
+        <rect width="100%" height="100%" fill="url(#dots)"/>
+      </svg>
+      <div class="home-badge">✨ Өдөр бүр шинэ адал явдал ✨</div>
+      <h2 class="home-title">
+        <span class="p">Өнөөдрийг</span><br>
+        <span class="b">бич</span> <span class="g">·</span>
+        <span class="y">дурса</span> <span class="g">·</span>
+        <span class="v">өс</span>
+      </h2>
+      <p class="home-sub">Энэ бол чамд зориулсан өдрийн тэмдэглэл. Бүхий л сайхан мөч, мэдрэмж, мөрөөдлөө эндээ бичээрэй!</p>
+      <div>
+        <button class="btn-rainbow" onclick="goTab('journal')">✏️ &nbsp;Өнөөдрийн тэмдэглэл</button>
+        <button class="btn-outline" onclick="goTab('calendar')">📅 &nbsp;Хуанли харах</button>
+      </div>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-card card-pink"><span class="feat-icon">😊</span><div class="feat-title">Сэтгэлийн байдал</div><p class="feat-desc">Өнөөдөр яаж мэдэрч байгаагаа тэмдэглэ.</p></div>
+      <div class="feat-card card-blue"><span class="feat-icon">📅</span><div class="feat-title">2026 Хуанли</div><p class="feat-desc">Жилийн бүх өдрүүдийг алдалгүй тэмдэглэ.</p></div>
+      <div class="feat-card card-yellow"><span class="feat-icon">🌟</span><div class="feat-title">Урам зориг</div><p class="feat-desc">Өдөр бүр чамд хэлэх урам өгөх үгс байна.</p></div>
+      <div class="feat-card card-green"><span class="feat-icon">🎯</span><div class="feat-title">Өнөөдрийн зорилго</div><p class="feat-desc">Зорилгоо бич — шалгаад дуусгаарай!</p></div>
+      <div class="feat-card card-purple"><span class="feat-icon">💭</span><div class="feat-title">Мэдрэмжийн нүүр</div><p class="feat-desc">Дотоод мэдрэмжээ илэрхийлж сур.</p></div>
+      <div class="feat-card card-orange"><span class="feat-icon">💾</span><div class="feat-title">Автоматаар хадгална</div><p class="feat-desc">Бичсэн зүйл чинь алга болохгүй — хадгалагдана.</p></div>
+    </div>
+
+    <div class="card card-purple" style="border-radius:22px;text-align:center;padding:2rem;">
+      <p style="font-family:'Fredoka One',cursive;font-size:14px;color:var(--purple);margin-bottom:0.7rem;letter-spacing:1px;">⭐ ӨНӨӨДРИЙН УРАМ ӨГӨХ ҮГ ⭐</p>
+      <p id="homeQ" style="font-family:'Fredoka One',cursive;font-size:1.3rem;color:var(--dark);line-height:1.6;"></p>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="section" id="section-calendar">
+    <div class="sec-badge" style="background:var(--blue2);color:var(--blue);">📅 Жилийн бүртгэл</div>
+    <h2 class="sec-title">2026 Хуанли</h2>
+    <p class="sec-sub">Тэмдэглэл хийсэн өдрүүдэд ⭐ одтой болно. Хэдэн одтой болж чадах вэ?</p>
+
+    <div class="card" style="border:3px solid var(--blue2);">
+      <div class="cal-nav">
+        <button class="cal-btn" id="prevMon">&#8592;</button>
+        <div>
+          <div class="cal-month-name" id="calMon"></div>
+          <div class="cal-year-txt" id="calYr"></div>
+        </div>
+        <button class="cal-btn" id="nextMon">&#8594;</button>
+      </div>
+      <div class="cal-hdrs">
+        <div class="cal-hdr">Да</div><div class="cal-hdr">Мя</div><div class="cal-hdr">Лх</div>
+        <div class="cal-hdr">Пү</div><div class="cal-hdr wknd">Ба</div>
+        <div class="cal-hdr wknd">Бя</div><div class="cal-hdr wknd">Ня</div>
+      </div>
+      <div class="cal-days" id="calGrid"></div>
+    </div>
+
+    <div class="card card-yellow" style="border-radius:20px;text-align:center;">
+      <p style="font-family:'Fredoka One',cursive;font-size:14px;color:var(--orange);margin-bottom:6px;letter-spacing:1px;">🌈 САРЫН УРАМ ӨГӨХ ҮГ</p>
+      <p id="monthQ" style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:var(--dark);line-height:1.6;"></p>
+    </div>
+  </div>
+
+  <!-- JOURNAL -->
+  <div class="section" id="section-journal">
+    <div class="sec-badge" style="background:var(--orange2);color:var(--orange);">✏️ Өдөр тутмын бичлэг</div>
+    <h2 class="sec-title">Өдрийн тэмдэглэл</h2>
+    <p class="sec-sub" id="journalDate"></p>
+
+    <div class="card card-pink">
+      <label class="field-label">😊 Өнөөдөр хэрхэн мэдэрч байна?</label>
+      <div class="mood-grid">
+        <div class="mood-btn" data-mood="маш сайхан" onclick="pickMood(this)"><span class="mood-emoji">🤩</span><span>Маш сайхан!</span></div>
+        <div class="mood-btn" data-mood="сайн" onclick="pickMood(this)"><span class="mood-emoji">😄</span><span>Сайн</span></div>
+        <div class="mood-btn" data-mood="дундаж" onclick="pickMood(this)"><span class="mood-emoji">😐</span><span>Дундаж</span></div>
+        <div class="mood-btn" data-mood="ядарсан" onclick="pickMood(this)"><span class="mood-emoji">😴</span><span>Ядарсан</span></div>
+        <div class="mood-btn" data-mood="гунигтай" onclick="pickMood(this)"><span class="mood-emoji">😢</span><span>Гунигтай</span></div>
+      </div>
+    </div>
+
+    <div class="card card-yellow">
+      <label class="field-label">⭐ Өнөөдрийн хамгийн сайхан зүйл</label>
+      <textarea class="kid-textarea ruled" id="bestThing" placeholder="Өнөөдөр надад хамгийн их баярласан зүйл нь...&#10;&#10;" style="min-height:100px;background:white;"></textarea>
+    </div>
+
+    <div class="card card-blue">
+      <label class="field-label">🧠 Өнөөдөр юу шинэ сурав?</label>
+      <textarea class="kid-textarea" id="learned" placeholder="Өнөөдөр би нэг шинэ зүйл сурлаа — тэр нь..." style="min-height:90px;background:white;"></textarea>
+    </div>
+
+    <div class="card card-green">
+      <label class="field-label">🎯 Өнөөдрийн зорилгууд</label>
+      <ul class="goals-list" id="goalsList">
+        <li class="goal-row"><div class="goal-check" onclick="toggleGoal(this)"></div><input class="goal-input" type="text" placeholder="Нэгдүгээр зорилго..."></li>
+        <li class="goal-row"><div class="goal-check" onclick="toggleGoal(this)"></div><input class="goal-input" type="text" placeholder="Хоёрдугаар зорилго..."></li>
+        <li class="goal-row"><div class="goal-check" onclick="toggleGoal(this)"></div><input class="goal-input" type="text" placeholder="Гуравдугаар зорилго..."></li>
+      </ul>
+    </div>
+
+    <div class="card card-purple">
+      <label class="field-label">👫 Найзуудтайгаа өнөөдөр юу хийв?</label>
+      <textarea class="kid-textarea" id="friends" placeholder="Найзтайгаа хамт..." style="min-height:90px;background:white;"></textarea>
+    </div>
+
+    <div class="card">
+      <label class="field-label">📖 Чөлөөтэй бичих — юу ч бичиж болно!</label>
+      <textarea class="kid-textarea ruled" id="freeWrite" placeholder="Өнөөдөр юу болов? Ямар зүйл сонирхолтой байв? Юу бодсон бэ?&#10;&#10;" style="min-height:180px;"></textarea>
+    </div>
+
+    <div class="card card-orange">
+      <label class="field-label">🌙 Маргааш юу хийх вэ?</label>
+      <textarea class="kid-textarea" id="tomorrow" placeholder="Маргааш хамгийн эхэлж..." style="min-height:80px;background:white;"></textarea>
+    </div>
+
+    <div class="card" style="text-align:center;border:3px solid var(--yellow2);">
+      <label class="field-label" style="text-align:center;">Өнөөдрийг хэдэн одоор үнэлэх вэ?</label>
+      <div class="star-row" id="starRow">
+        <span class="star" data-v="1" onclick="rateStar(1)">★</span>
+        <span class="star" data-v="2" onclick="rateStar(2)">★</span>
+        <span class="star" data-v="3" onclick="rateStar(3)">★</span>
+        <span class="star" data-v="4" onclick="rateStar(4)">★</span>
+        <span class="star" data-v="5" onclick="rateStar(5)">★</span>
+      </div>
+    </div>
+
+    <div class="save-row">
+      <span class="saved-ok" id="savedOk">🎉 Хадгалагдлаа!</span>
+      <button class="save-btn save-btn-green" onclick="saveJournal()">💾 &nbsp;Хадгалах</button>
+    </div>
+  </div>
+
+  <!-- FEELINGS -->
+  <div class="section" id="section-feelings">
+    <div class="sec-badge" style="background:var(--purple2);color:var(--purple);">💭 Дотоод ертөнц</div>
+    <h2 class="sec-title">Миний мэдрэмж</h2>
+    <p class="sec-sub">Одоо ямар мэдрэмж байна? Хэлэхэд буруу мэдрэмж гэж байхгүй — бүгд зөв!</p>
+
+    <div class="card">
+      <label class="field-label" style="margin-bottom:1rem;">Одоо би... мэдэрч байна</label>
+      <div class="emo-grid">
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">🤩</span><span>Маш баяртай</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😄</span><span>Баяртай</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😌</span><span>Тайван</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">💕</span><span>Хайртай</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😔</span><span>Гунигтай</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😰</span><span>Санаа зовж байна</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😤</span><span>Уурласан</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😨</span><span>Айсан</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😴</span><span>Ядарсан</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">🤔</span><span>Бодож байна</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">😊</span><span>Сэтгэл дүүрэн</span></div>
+        <div class="emo-btn" onclick="pickEmo(this)"><span class="emo-icon">💪</span><span>Хүчтэй!</span></div>
+      </div>
+    </div>
+
+    <div class="prompt-block card-pink" style="border-color:var(--pink2);">
+      <p class="prompt-q">💬 "Өнөөдөр намайг хамгийн их баярлуулсан зүйл нь..."</p>
+      <textarea class="prompt-area" id="feelQ1" placeholder="Бич..." style="background:white;border-radius:12px;"></textarea>
+    </div>
+    <div class="prompt-block card-green" style="border-color:var(--green2);">
+      <p class="prompt-q">🌟 "Хэрэв би шидтэн байсан бол юу хийх байсан бэ?"</p>
+      <textarea class="prompt-area" id="feelQ2" placeholder="Бич..." style="background:white;border-radius:12px;"></textarea>
+    </div>
+    <div class="prompt-block card-blue" style="border-color:var(--blue2);">
+      <p class="prompt-q">💙 "Өнөөдөр надад тусалсан хүн..."</p>
+      <textarea class="prompt-area" id="feelQ3" placeholder="Бич..." style="background:white;border-radius:12px;"></textarea>
+    </div>
+    <div class="prompt-block card-yellow" style="border-color:var(--yellow);">
+      <p class="prompt-q">✨ "Би өөртөө: 'Чи маш сайн хийсэн!' гэж хэлмээр байна, учир нь..."</p>
+      <textarea class="prompt-area" id="feelQ4" placeholder="Бич..." style="background:white;border-radius:12px;"></textarea>
+    </div>
+
+    <div class="save-row">
+      <button class="save-btn save-btn-green" onclick="saveFeelings()">💾 &nbsp;Хадгалах</button>
+    </div>
+
+    <!-- Timer -->
+    <div class="card" style="text-align:center;background:linear-gradient(135deg,var(--blue3),var(--purple3));border:3px solid var(--blue2);">
+      <label class="field-label" style="display:block;text-align:center;margin-bottom:0.5rem;">⏰ Тайвших цаг</label>
+      <div class="timer-face" id="timerFace">05:00</div>
+      <div class="timer-presets">
+        <button class="t-preset sel" onclick="setTimerMins(5,this)">5 мин</button>
+        <button class="t-preset" onclick="setTimerMins(10,this)">10 мин</button>
+        <button class="t-preset" onclick="setTimerMins(15,this)">15 мин</button>
+      </div>
+      <button class="btn-rainbow" id="timerToggle" onclick="toggleTimer()">▶ &nbsp;Эхлэх</button>
+      <p style="font-size:13px;color:var(--mid);margin-top:1rem;font-weight:700;line-height:1.7;">
+        Нүдээ аниад, гүнзгий амьсгал ав.<br>Тоолохын хамт тайвшраарай. 🌈
+      </p>
+    </div>
+  </div>
+
+  <!-- MOTIVATION -->
+  <div class="section" id="section-motivation">
+    <div class="sec-badge" style="background:var(--green2);color:#2D8040;">🌟 Өдөр бүрийн хүч</div>
+    <h2 class="sec-title">Урам зориг</h2>
+    <p class="sec-sub">Чи аугаа хүүхэд! Өнөөдрийн урам зориг чинь энд байна. 🌈</p>
+
+    <div class="quote-hero">
+      <div class="q-stars-bg"></div>
+      <div class="quote-star">⭐</div>
+      <p class="quote-txt" id="mainQ" style="margin:1rem 0;"></p>
+      <div class="quote-star">⭐ ⭐ ⭐</div>
+    </div>
+
+    <p style="font-family:'Fredoka One',cursive;font-size:16px;color:var(--mid);margin-bottom:0.9rem;letter-spacing:1px;">💬 ДОЛОО ХОНОГИЙН БАТЛАМЖИЙН ХЭЛЛЭГҮҮД</p>
+    <div class="affirm-grid">
+      <div class="affirm-card" style="background:var(--yellow3);border-color:var(--yellow);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">⭐</span>"Би хүчтэй хүүхэд. Ямар ч зүйлийг хийж чадна!"</div>
+      <div class="affirm-card" style="background:var(--pink3);border-color:var(--pink);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">💕</span>"Алдаа гаргасан ч болоо — тэрхүүгээр илүү ухаалаг болно."</div>
+      <div class="affirm-card" style="background:var(--blue3);border-color:var(--blue);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">🌈</span>"Миний инээмсэглэл бусдыг баярлуулдаг."</div>
+      <div class="affirm-card" style="background:var(--green3);border-color:var(--green);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">🌱</span>"Би өдөр бүр шинэ зүйл сурч, өсч байна."</div>
+      <div class="affirm-card" style="background:var(--purple3);border-color:var(--purple);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">💜</span>"Би онцгой хүүхэд. Надтай адилхан хүн байхгүй."</div>
+      <div class="affirm-card" style="background:var(--orange3);border-color:var(--orange);"><span style="font-size:1.8rem;display:block;margin-bottom:6px;">🔥</span>"Мөрөөдлийнхөө төлөө зүтгэхэд хэзээ ч оройтдоггүй."</div>
+    </div>
+
+    <div class="rainbow-div"></div>
+
+    <p style="font-family:'Fredoka One',cursive;font-size:16px;color:var(--mid);margin-bottom:0.9rem;letter-spacing:1px;">🌈 ЖИЛИЙН 12 САРЫН УРАМ ӨГӨХ ҮГС</p>
+    <div id="allQ"></div>
+
+    <div class="rainbow-div"></div>
+
+    <div class="card" style="background:linear-gradient(135deg,var(--yellow3),var(--pink3),var(--purple3));border:3px solid var(--pink2);">
+      <label class="field-label">💫 Миний мөрөөдөл — Томдохдоо яах вэ?</label>
+      <textarea class="kid-textarea" id="myDream" placeholder="Томдохдоо би... болно гэж мөрөөддөг. Учир нь...&#10;&#10;" style="min-height:120px;background:rgba(255,255,255,0.8);border-color:transparent;"></textarea>
+      <div class="save-row">
+        <button class="save-btn save-btn-green" onclick="saveDream()">💾 &nbsp;Мөрөөдлөө хадгалах</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+const MN_MONTHS=['Нэгдүгээр сар','Хоёрдугаар сар','Гуравдугаар сар','Дөрөвдүгээр сар','Тавдугаар сар','Зургадугаар сар','Долдугаар сар','Наймдугаар сар','Есдүгээр сар','Аравдугаар сар','Арван нэгдүгээр сар','Арван хоёрдугаар сар'];
+const MN_DAYS=['Даваа','Мягмар','Лхагва','Пүрэв','Баасан','Бямба','Ням'];
+const DAY_QUOTES=['Шинэ долоо хоног эхэллээ! Чи маш их сайхан зүйл хийж чадна — эхлэ!','Чи ухаалаг. Чи хичээнгүй. Өнөөдөр ч шилдэг байна!','Долоо хоногийн дунд хүрлээ — чи аль хэдийн маш их зүйл хийсэн байна!','Хэцүү мэт санагдсан зүйл хийсний дараа хамгийн их баяр ирдэг.','Долоо хоногийн сүүлийн өдөр! Чи маш сайн хийлээ — өөртөө баяр хүргэ!','Амралтын өдөр — тоглоорой, инээгээрэй, хайртай хүмүүстэйгээ хамт байгаарай!','Амгалан ням гараг. Шинэ долоо хоногт бэлтгэ — чи чадна!'];
+const MONTH_QUOTES=['Шинэ жил! 2026 он шинэ ном, шинэ найз, шинэ адал явдлаар дүүрэн байна!','Хайрын сар. Эргэн тойрны хүмүүстээ "Би чамд хайртай!" гэж хэл.','Хавар ирлээ! Ургамал мэт чи ч өдөр бүр өсч байна.','Борооны дараа солонго гардаг шиг, хэцүү байсны дараа сайн зүйл ирнэ!','Цэцэглэлтийн сар. Чиний авьяас бас цэцэглэж байна — харуулаарай!','Зун ирлээ! Наранд тоглоорой, сурч мэдрээрэй, инээгээрэй!','Зун дунд — амьдрал хамгийн дүүрэн. Хамт байгаа хүмүүсийнхээ хамт байгаарай.','Зуны эцэст ч гоё өдрүүд хүлээж байна. Яараад байхгүй!','Сургуулийн улирал эхэллээ! Шинэ зүйл сурах — хамгийн гоё адал явдал!','Намрын алт шиг — бүх зүйл гоё болдог. Чи ч бас гоё!','Хүйтэн болж байна ч гэртээ дулаан байгаарай. Хайртай хүмүүстэйгээ хамт.','Жилийн эцэст — хэчнээн их өссөн, сурсан вэ! 2026 онд баяр хүргэе!'];
+
+const now=new Date();
+let calYr=2026,calMo=now.getFullYear()<2026?0:now.getMonth();
+let starVal=0,timerSec=300,timerTotal=300,timerRunning=false,timerIv=null;
+
+function jsMn(d){return d===0?6:d-1;}
+function pad(n){return String(n).padStart(2,'0');}
+function fmt(s){return `${pad(Math.floor(s/60))}:${pad(s%60)}`;}
+function todayKey(){return `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;}
+
+function renderBadge(){
+  const mn=jsMn(now.getDay());
+  document.getElementById('todayBubble').innerHTML=`<div class="wd">${MN_DAYS[mn]}</div><div class="dn">${now.getDate()}</div><div class="my">${MN_MONTHS[now.getMonth()].replace(' сар','')} · ${now.getFullYear()}</div>`;
+}
+
+function renderJournalDate(){
+  const mn=jsMn(now.getDay());
+  document.getElementById('journalDate').textContent=`${now.getFullYear()} оны ${MN_MONTHS[now.getMonth()]} · ${now.getDate()}-ний өдөр · ${MN_DAYS[mn]}`;
+}
+
+function renderQuotes(){
+  const mn=jsMn(now.getDay());
+  document.getElementById('homeQ').textContent=DAY_QUOTES[mn];
+  document.getElementById('mainQ').textContent=DAY_QUOTES[mn];
+  document.getElementById('monthQ').textContent=MONTH_QUOTES[calMo];
+  const colors=['yellow','pink','blue','green','purple','orange','pink','blue','green','yellow','purple','orange'];
+  document.getElementById('allQ').innerHTML=MONTH_QUOTES.map((q,i)=>`<div class="card card-${colors[i]}" style="margin-bottom:10px;border-radius:16px;padding:1.25rem 1.5rem;"><p style="font-family:'Fredoka One',cursive;font-size:11px;letter-spacing:1px;color:var(--mid);margin-bottom:5px;">${MN_MONTHS[i].toUpperCase()}</p><p style="font-family:'Fredoka One',cursive;font-size:15px;color:var(--dark);line-height:1.6;">"${q}"</p></div>`).join('');
+}
+
+function renderCalendar(){
+  document.getElementById('calMon').textContent=MN_MONTHS[calMo];
+  document.getElementById('calYr').textContent=`${calYr} он`;
+  document.getElementById('monthQ').textContent=MONTH_QUOTES[calMo];
+  const first=new Date(calYr,calMo,1).getDay(),offset=jsMn(first),total=new Date(calYr,calMo+1,0).getDate();
+  const tD=now.getDate(),tM=now.getMonth(),tY=now.getFullYear();
+  const entries=JSON.parse(localStorage.getItem('kid_entries')||'{}');
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML='';
+  for(let i=0;i<offset;i++){const el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el);}
+  for(let d=1;d<=total;d++){
+    const col=(offset+d-1)%7,isW=col>=4,isT=d===tD&&calMo===tM&&calYr===tY;
+    const dk=`${calYr}-${pad(calMo+1)}-${pad(d)}`,hasE=!!entries[dk];
+    const el=document.createElement('div');
+    let cls='cal-day';if(isW)cls+=' wknd-day';if(isT)cls+=' today';if(hasE)cls+=' has-entry';
+    el.className=cls;el.textContent=d;el.onclick=()=>goTab('journal');
+    grid.appendChild(el);
+  }
+}
+
+document.getElementById('prevMon').onclick=()=>{calMo--;if(calMo<0){calMo=11;calYr--;}renderCalendar();};
+document.getElementById('nextMon').onclick=()=>{calMo++;if(calMo>11){calMo=0;calYr++;}renderCalendar();};
+
+function goTab(name){
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelector(`[data-tab="${name}"]`).classList.add('active');
+  document.getElementById(`section-${name}`).classList.add('active');
+}
+document.querySelectorAll('.nav-tab').forEach(t=>t.addEventListener('click',()=>goTab(t.dataset.tab)));
+
+function pickMood(el){document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');}
+function pickEmo(el){el.classList.toggle('sel');}
+function toggleGoal(el){el.classList.toggle('done');el.textContent=el.classList.contains('done')?'✓':'';el.nextElementSibling.classList.toggle('done-line');}
+function rateStar(v){starVal=v;document.querySelectorAll('.star').forEach(s=>s.classList.toggle('lit',+s.dataset.v<=v));}
+
+function saveJournal(){
+  const key=todayKey();
+  const goals=[...document.querySelectorAll('#goalsList .goal-input')].map(i=>i.value);
+  const data={mood:document.querySelector('.mood-btn.sel')?.dataset.mood||'',bestThing:document.getElementById('bestThing').value,learned:document.getElementById('learned').value,goals,friends:document.getElementById('friends').value,freeWrite:document.getElementById('freeWrite').value,tomorrow:document.getElementById('tomorrow').value,rating:starVal,at:new Date().toISOString()};
+  const entries=JSON.parse(localStorage.getItem('kid_entries')||'{}');entries[key]=data;localStorage.setItem('kid_entries',JSON.stringify(entries));
+  const ok=document.getElementById('savedOk');ok.style.display='inline-block';setTimeout(()=>{ok.style.display='none';},3000);
+  renderCalendar();
+}
+
+function saveFeelings(){
+  const key=todayKey();
+  const eList=[...document.querySelectorAll('.emo-btn.sel')].map(e=>e.querySelector('span:last-child').textContent);
+  const data={emotions:eList,q1:document.getElementById('feelQ1').value,q2:document.getElementById('feelQ2').value,q3:document.getElementById('feelQ3').value,q4:document.getElementById('feelQ4').value,at:new Date().toISOString()};
+  const f=JSON.parse(localStorage.getItem('kid_feelings')||'{}');f[key]=data;localStorage.setItem('kid_feelings',JSON.stringify(f));
+  alert('🎉 Мэдрэмж хадгалагдлаа!');
+}
+
+function saveDream(){localStorage.setItem('kid_dream',document.getElementById('myDream').value);alert('💫 Мөрөөдөл хадгалагдлаа!');}
+
+function loadSaved(){
+  const key=todayKey();
+  const entries=JSON.parse(localStorage.getItem('kid_entries')||'{}');const d=entries[key];
+  if(d){
+    if(d.bestThing)document.getElementById('bestThing').value=d.bestThing;
+    if(d.learned)document.getElementById('learned').value=d.learned;
+    if(d.friends)document.getElementById('friends').value=d.friends;
+    if(d.freeWrite)document.getElementById('freeWrite').value=d.freeWrite;
+    if(d.tomorrow)document.getElementById('tomorrow').value=d.tomorrow;
+    if(d.rating)rateStar(d.rating);
+    if(d.mood){const b=document.querySelector(`[data-mood="${d.mood}"]`);if(b)b.classList.add('sel');}
+    if(d.goals){const inputs=document.querySelectorAll('#goalsList .goal-input');d.goals.forEach((v,i)=>{if(inputs[i])inputs[i].value=v;});}
+  }
+  const feelings=JSON.parse(localStorage.getItem('kid_feelings')||'{}');const f=feelings[key];
+  if(f){if(f.q1)document.getElementById('feelQ1').value=f.q1;if(f.q2)document.getElementById('feelQ2').value=f.q2;if(f.q3)document.getElementById('feelQ3').value=f.q3;if(f.q4)document.getElementById('feelQ4').value=f.q4;}
+  const dream=localStorage.getItem('kid_dream');if(dream)document.getElementById('myDream').value=dream;
+}
+
+function setTimerMins(mins,btn){clearInterval(timerIv);timerRunning=false;timerSec=timerTotal=mins*60;document.getElementById('timerFace').textContent=fmt(timerSec);document.getElementById('timerToggle').textContent='▶  Эхлэх';document.querySelectorAll('.t-preset').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
+function toggleTimer(){
+  const btn=document.getElementById('timerToggle');
+  if(timerRunning){clearInterval(timerIv);timerRunning=false;btn.textContent='▶  Үргэлжлүүлэх';}
+  else{if(timerSec<=0)timerSec=timerTotal;timerRunning=true;btn.textContent='⏸  Зогсоох';timerIv=setInterval(()=>{timerSec--;document.getElementById('timerFace').textContent=fmt(timerSec);if(timerSec<=0){clearInterval(timerIv);timerRunning=false;btn.textContent='🎉  Дууслаа!';document.getElementById('timerFace').textContent='🌈';}},1000);}
+}
+
+
+const AVATARS = ['🌟','🦁','🐯','🐻','🐰','🦊','🐸','🐧','🦋','🌈','🚀','⚽','🎨','🎵','🎮','🌸'];
+let avatarIdx = 0;
+
+function cycleAvatar(){
+  avatarIdx = (avatarIdx + 1) % AVATARS.length;
+  document.getElementById('avatarDisplay').textContent = AVATARS[avatarIdx];
+}
+
+function saveProfile(){
+  const name = document.getElementById('kidName').value.trim();
+  const age  = document.getElementById('kidAge').value.trim();
+  const avatar = AVATARS[avatarIdx];
+  if(!name){ document.getElementById('kidName').focus(); return; }
+  localStorage.setItem('kid_profile', JSON.stringify({name, age, avatar}));
+  showProfile({name, age, avatar});
+  const ok = document.getElementById('profileSavedOk');
+  ok.style.display = 'inline';
+  setTimeout(()=>{ ok.style.display='none'; }, 2500);
+}
+
+function editProfile(){
+  const p = JSON.parse(localStorage.getItem('kid_profile')||'{}');
+  document.getElementById('kidName').value = p.name||'';
+  document.getElementById('kidAge').value  = p.age||'';
+  avatarIdx = AVATARS.indexOf(p.avatar||'🌟');
+  if(avatarIdx<0) avatarIdx=0;
+  document.getElementById('avatarDisplay').textContent = AVATARS[avatarIdx];
+  document.getElementById('profileGreeting').style.display = 'none';
+  document.getElementById('profileCard').querySelector('div>div:nth-child(2)').style.display = 'block';
+  document.getElementById('avatarDisplay').style.display = 'block';
+}
+
+function showProfile(p){
+  // greeting side
+  document.getElementById('greetAvatar').textContent = p.avatar||'🌟';
+  document.getElementById('greetName').textContent   = p.name;
+  document.getElementById('greetAge').textContent    = p.age ? p.age + ' настай' : '';
+  document.getElementById('profileGreeting').style.display = 'block';
+  // hide inputs
+  document.getElementById('profileCard').querySelector('div>div:nth-child(2)').style.display = 'none';
+  document.getElementById('avatarDisplay').style.display = 'none';
+  // header
+  document.getElementById('headerAvatar').textContent = p.avatar||'🌟';
+  document.getElementById('headerName').textContent   = p.name;
+  document.getElementById('headerAge').textContent    = p.age ? p.age + ' нас' : '';
+  document.getElementById('headerProfile').style.display = 'inline-flex';
+  // home greeting
+  const hg = document.getElementById('homeGreetName');
+  if(hg) hg.textContent = p.name + (p.age ? ', ' + p.age + ' нас' : '');
+}
+
+function loadProfile(){
+  const raw = localStorage.getItem('kid_profile');
+  if(raw){
+    const p = JSON.parse(raw);
+    avatarIdx = AVATARS.indexOf(p.avatar||'🌟');
+    if(avatarIdx<0) avatarIdx=0;
+    document.getElementById('avatarDisplay').textContent = p.avatar||'🌟';
+    showProfile(p);
+  }
+}
+
+renderBadge();renderJournalDate();renderCalendar();renderQuotes();loadSaved();loadProfile();
+</script>
+</body>
+</html>
